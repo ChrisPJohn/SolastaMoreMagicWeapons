@@ -1,0 +1,2 @@
+SolastaMoreMagicWeapons/&FancySkeletonTitle	Fancy Skeleton
+SolastaMoreMagicWeapons/&FancySkeletonDescription	I'm a fancy skeleton
