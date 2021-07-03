@@ -1,2 +1,52 @@
-SolastaMoreMagicWeapons/&FancySkeletonTitle	Fancy Skeleton
-SolastaMoreMagicWeapons/&FancySkeletonDescription	I'm a fancy skeleton
+Equipment/&Enchanted_Handaxe_Acuteness_Title Handaxe of Acuteness
+Equipment/&Enchanted_Handaxe_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Handaxe_Sharpness_Title Handaxe of Sharpness
+Equipment/&Enchanted_Handaxe_Sharpness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Handaxe_Souldrinker_Title Souldrinker Handaxe
+Equipment/&Enchanted_Handaxe_Souldrinker_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. A favorite of Silent Whisper agents, this weapon was designed by Cylordir Redblade.
+Equipment/&Enchanted_Handaxe_Frostburn_Title Frostburn Handaxe
+Equipment/&Enchanted_Handaxe_Frostburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Keliandir Moltenheart, who forged this weapon to fight salamanders after an exploration of the elemental planes went awry.
+Equipment/&Enchanted_Javelin_Acuteness_Title Javelin of Acuteness
+Equipment/&Enchanted_Javelin_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Javelin_Sharpness_Title Javelin of Sharpness
+Equipment/&Enchanted_Javelin_Sharpness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Javelin_Souldrinker_Title Souldrinker Javelin
+Equipment/&Enchanted_Javelin_Souldrinker_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. A favorite of Silent Whisper agents, this weapon was designed by Cylordir Redblade.
+Equipment/&Enchanted_Javelin_Frostburn_Title Frostburn Javelin
+Equipment/&Enchanted_Javelin_Frostburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Keliandir Moltenheart, who forged this weapon to fight salamanders after an exploration of the elemental planes went awry.
+Equipment/&Enchanted_Club_Acuteness_Title Club of Acuteness
+Equipment/&Enchanted_Club_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Club_Bearclaw_Title Bearclaw Club
+Equipment/&Enchanted_Club_Bearclaw_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. The sharp spikes of the bear's claw shred armor to inflict additional damage – just as expected by Ildurial Stronghand, who designed the first weapon of this kind.
+Equipment/&Enchanted_Club_Power_Title Club of Power
+Equipment/&Enchanted_Club_Power_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. Some creatures only respect physical strengths. Manacalon arcanists created this club to give champions of the Iron Legions the strength their elven bodies didn’t provide.
+Equipment/&Enchanted_Club_Lightbringer_Title Lightbringer Club
+Equipment/&Enchanted_Club_Lightbringer_Description This enchanted weapon was forged using the ancient knowledge of Colthannin's master smiths. It was designed by Elgador Keenspirit, Magesmith of the Arcaneum to support combat against undead creatures.
+Equipment/&Enchanted_Club_Punisher_Title Punisher Club
+Equipment/&Enchanted_Club_Punisher_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. The combination of the best metal and Slavestone gave this axe incredible piercing power.
+Equipment/&Enchanted_Maul_Acuteness_Title Maul of Acuteness
+Equipment/&Enchanted_Maul_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Maul_Bearclaw_Title Bearclaw Maul
+Equipment/&Enchanted_Maul_Bearclaw_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. The sharp spikes of the bear's claw shred armor to inflict additional damage – just as expected by Ildurial Stronghand, who designed the first weapon of this kind.
+Equipment/&Enchanted_Maul_Power_Title Maul of Power
+Equipment/&Enchanted_Maul_Power_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. Some creatures only respect physical strengths. Manacalon arcanists created this Maul to give champions of the Iron Legions the strength their elven bodies didn’t provide.
+Equipment/&Enchanted_Maul_Lightbringer_Title Lightbringer Maul
+Equipment/&Enchanted_Maul_Lightbringer_Description This enchanted weapon was forged using the ancient knowledge of Colthannin's master smiths. It was designed by Elgador Keenspirit, Magesmith of the Arcaneum to support combat against undead creatures.
+Equipment/&Enchanted_Maul_Punisher_Title Punisher Maul
+Equipment/&Enchanted_Maul_Punisher_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. The combination of the best metal and Slavestone gave this axe incredible piercing power.
+Equipment/&Enchanted_Quarterstaff_Acuteness_Title Quarterstaff of Acuteness
+Equipment/&Enchanted_Quarterstaff_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Quarterstaff_Frostburn_Title Frostburn Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Frostburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Keliandir Moltenheart, who forged this weapon to fight salamanders after an exploration of the elemental planes went awry.
+Equipment/&Enchanted_Quarterstaff_Souldrinker_Title Souldrinker Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Souldrinker_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. A favorite of Silent Whisper agents, this weapon was designed by Cylordir Redblade.
+Equipment/&Enchanted_Quarterstaff_Lightbringer_Title Lightbringer Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Lightbringer_Description This enchanted weapon was forged using the ancient knowledge of Colthannin's master smiths. It was designed by Elgador Keenspirit, Magesmith of the Arcaneum to support combat against undead creatures.
+Equipment/&Enchanted_Quarterstaff_Stormblade_Title Stormblade Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Stormblade_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. It was designed by Galar Stromforge, the first dwarven smith to harness the power of storm in a weapon – to devastating effect!
+Equipment/&Enchanted_Quarterstaff_Dragonblade_Title Dragonblade Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Dragonblade_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Lestoreth Steelarm to fight in the frozen North of the Empire.
+Equipment/&Enchanted_Quarterstaff_Warden_Title Warden Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Warden_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. It was designed by Ildurial Strongarm, a famous Manacalon bladesmith. The first such blade, the Manacalon Warden, was offered to the commander of the Euraidd.
+Equipment/&Enchanted_Quarterstaff_Whiteburn_Title Whiteburn Quarterstaff
+Equipment/&Enchanted_Quarterstaff_Whiteburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Whiteburn was created by the first Danantar to fight a troll invasion coming from the swamps to the south of his domain between the Sioltafin and the Scarafin.

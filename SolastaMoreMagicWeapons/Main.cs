@@ -6,12 +6,16 @@ using UnityModManagerNet;
 using SolastaModApi;
 using ModKit;
 using ModKit.Utility;
+using SolastaModApi.Extensions;
+using System.Collections.Generic;
 
 namespace SolastaMoreMagicWeapons
 {
     public static class Main
     {
         public static readonly string MOD_FOLDER = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+        public static Guid ModGuidNamespace = new Guid("16757d1b-518f-4669-af43-1ddf5d23c223");
 
         [Conditional("DEBUG")]
         internal static void Log(string msg) => Logger.Log(msg);
@@ -20,7 +24,6 @@ namespace SolastaMoreMagicWeapons
         internal static void Warning(string msg) => Logger?.Warning(msg);
         internal static UnityModManager.ModEntry.ModLogger Logger { get; private set; }
         internal static ModManager<Core, Settings> Mod { get; private set; }
-        internal static MenuManager Menu { get; private set; }
         internal static Settings Settings { get { return Mod.Settings; } }
 
         internal static bool Load(UnityModManager.ModEntry modEntry)
@@ -30,7 +33,6 @@ namespace SolastaMoreMagicWeapons
                 Logger = modEntry.Logger;
 
                 Mod = new ModManager<Core, Settings>();
-                Menu = new MenuManager();
                 modEntry.OnToggle = OnToggle;
 
                 Translations.Load(MOD_FOLDER);
@@ -50,35 +52,169 @@ namespace SolastaMoreMagicWeapons
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 Mod.Enable(modEntry, assembly);
-                Menu.Enable(modEntry, assembly);
             }
             else
             {
-                Menu.Disable(modEntry);
                 Mod.Disable(modEntry, false);
                 ReflectionCache.Clear();
             }
             return true;
         }
 
+        private struct MagicItemDataHolder
+        {
+            public string Name;
+            public ItemDefinition Item;
+            public RecipeDefinition Recipe;
+
+            public MagicItemDataHolder(string name, ItemDefinition item, RecipeDefinition recipe)
+            {
+                this.Name = name;
+                this.Item = item;
+                this.Recipe = recipe;
+            }
+        }
         internal static void OnGameReady()
         {
-            // example: use the ModApi to get a skeleton blueprint
-            //
-            var skeleton = DatabaseHelper.MonsterDefinitions.Skeleton;
+            List<ItemDefinition> ThrowingWeapons = new List<ItemDefinition>() {
+                DatabaseHelper.ItemDefinitions.Handaxe,
+                DatabaseHelper.ItemDefinitions.Javelin,
+            };
 
-            // example: how to add TEXTS to the game right
-            //
-            // . almost every game blueprint has a GuiPresentation attribute
-            // . GuiPresentation has a Title and a Description
-            // . Create an entry in Translations-en.txt for those (tab separated)
-            // . Refer to those entries when assigning values to these attributes
-            //
-            // . DON'T FORGET TO CLEAN UP THIS EXAMPLE AND Translations-en.txt file
-            // . ugly things will happen if you don't
-            //
-            skeleton.GuiPresentation.Title = "SolastaMoreMagicWeapons/&FancySkeletonTitle";
-            skeleton.GuiPresentation.Description = "SolastaMoreMagicWeapons/&FancySkeletonDescription";
+            List<MagicItemDataHolder> ThrowingToCopy = new List<MagicItemDataHolder>()
+            {
+                // Same as +1
+                new MagicItemDataHolder("Acuteness", DatabaseHelper.ItemDefinitions.Enchanted_Dagger_of_Acuteness,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_DaggerOfAcuteness),
+                // Same as +2
+                new MagicItemDataHolder("Sharpness", DatabaseHelper.ItemDefinitions.Enchanted_Dagger_of_Sharpness,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_DaggerOfSharpness),
+                new MagicItemDataHolder("Souldrinker", DatabaseHelper.ItemDefinitions.Enchanted_Dagger_Souldrinker,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_DaggerSouldrinker),
+                new MagicItemDataHolder("Frostburn", DatabaseHelper.ItemDefinitions.Enchanted_Dagger_Frostburn,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_DaggerFrostburn),
+            };
+
+            List<ItemDefinition> PrimedInputs = new List<ItemDefinition>()
+            {
+                DatabaseHelper.ItemDefinitions.Primed_Dagger,
+            };
+
+            AddRecipesForWeapons(ThrowingWeapons, ThrowingToCopy, PrimedInputs);
+
+            List<ItemDefinition> BashingWeapons = new List<ItemDefinition>()
+            {
+                DatabaseHelper.ItemDefinitions.Club,
+                DatabaseHelper.ItemDefinitions.Maul,
+            };
+            
+            List<MagicItemDataHolder> BashingToCopy = new List<MagicItemDataHolder>()
+            {
+                // Same as +1
+                new MagicItemDataHolder("Acuteness", DatabaseHelper.ItemDefinitions.Enchanted_Mace_Of_Acuteness,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_MaceOfAcuteness),
+                new MagicItemDataHolder("Bearclaw", DatabaseHelper.ItemDefinitions.Enchanted_Morningstar_Bearclaw,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_MorningstarBearclaw),
+                new MagicItemDataHolder("Power", DatabaseHelper.ItemDefinitions.Enchanted_Morningstar_Of_Power,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_MorningstarOfPower),
+                new MagicItemDataHolder("Lightbringer", DatabaseHelper.ItemDefinitions.Enchanted_Greatsword_Lightbringer,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_GreatswordLightbringer),
+                new MagicItemDataHolder("Punisher", DatabaseHelper.ItemDefinitions.Enchanted_Battleaxe_Punisher,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_BattleaxePunisher),
+            };
+
+            List<ItemDefinition> BashingPrimed = new List<ItemDefinition>()
+            {
+                DatabaseHelper.ItemDefinitions.Primed_Morningstar,
+                DatabaseHelper.ItemDefinitions.Primed_Mace,
+                DatabaseHelper.ItemDefinitions.Primed_Greatsword,
+                DatabaseHelper.ItemDefinitions.Primed_Battleaxe,
+            };
+
+            AddRecipesForWeapons(BashingWeapons, BashingToCopy, BashingPrimed);
+
+            List<ItemDefinition> Quarterstaff = new List<ItemDefinition>()
+            {
+                DatabaseHelper.ItemDefinitions.Quarterstaff,
+            };
+
+            List<MagicItemDataHolder> QuarterstaffToCopy = new List<MagicItemDataHolder>()
+            {
+                // Same as +1
+                new MagicItemDataHolder("Acuteness", DatabaseHelper.ItemDefinitions.Enchanted_Mace_Of_Acuteness,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_MaceOfAcuteness),
+                new MagicItemDataHolder("Stormblade", DatabaseHelper.ItemDefinitions.Enchanted_Longsword_Stormblade,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_LongswordStormblade),
+                new MagicItemDataHolder("Frostburn", DatabaseHelper.ItemDefinitions.Enchanted_Longsword_Frostburn,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_LongswordFrostburn),
+                new MagicItemDataHolder("Lightbringer", DatabaseHelper.ItemDefinitions.Enchanted_Greatsword_Lightbringer,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_GreatswordLightbringer),
+                new MagicItemDataHolder("Dragonblade", DatabaseHelper.ItemDefinitions.Enchanted_Longsword_Dragonblade,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_LongswordDragonblade),
+                new MagicItemDataHolder("Warden", DatabaseHelper.ItemDefinitions.Enchanted_Longsword_Warden,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_LongswordWarden),
+                new MagicItemDataHolder("Whiteburn", DatabaseHelper.ItemDefinitions.Enchanted_Shortsword_Whiteburn,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_ShortswordWhiteburn),
+                new MagicItemDataHolder("Souldrinker", DatabaseHelper.ItemDefinitions.Enchanted_Dagger_Souldrinker,
+                    DatabaseHelper.RecipeDefinitions.Recipe_Enchantment_DaggerSouldrinker),
+            };
+
+            List<ItemDefinition> QuarterstaffPrimed = new List<ItemDefinition>()
+            {
+                DatabaseHelper.ItemDefinitions.Primed_Mace,
+                DatabaseHelper.ItemDefinitions.Primed_Longsword,
+                DatabaseHelper.ItemDefinitions.Primed_Greatsword,
+                DatabaseHelper.ItemDefinitions.Primed_Shortsword,
+                DatabaseHelper.ItemDefinitions.Primed_Dagger,
+            };
+
+            AddRecipesForWeapons(Quarterstaff, QuarterstaffToCopy, QuarterstaffPrimed);
+        }
+
+        private static void AddRecipesForWeapons(List<ItemDefinition> BaseWeapons, List<MagicItemDataHolder> MagicToCopy, List<ItemDefinition> PossiblePrimedItemsToReplace)
+        {
+            foreach (ItemDefinition baseItem in BaseWeapons)
+            {
+                foreach (MagicItemDataHolder itemData in MagicToCopy)
+                {
+                    // Generate Crossbow items
+                    ItemDefinition newCrossbow = ItemBuilder.BuildNewMagicWeapon(baseItem, itemData.Item, itemData.Name);
+                    // Generate recipes for crossbows
+                    string recipeName = "RecipeEnchanting" + newCrossbow.Name;
+                    RecipeBuilder builder = new RecipeBuilder(recipeName, GuidHelper.Create(Main.ModGuidNamespace, recipeName).ToString());
+                    builder.AddIngredient(baseItem);
+                    foreach (IngredientOccurenceDescription ingredient in itemData.Recipe.Ingredients)
+                    {
+                        if (PossiblePrimedItemsToReplace.Contains(ingredient.ItemDefinition))
+                        {
+                            continue;
+                        }
+                        builder.AddIngredient(ingredient);
+                    }
+                    builder.SetCraftedItem(newCrossbow);
+                    builder.SetCraftingCheckData(itemData.Recipe.CraftingHours, itemData.Recipe.CraftingDC, itemData.Recipe.ToolType);
+                    RecipeDefinition newRecipe = builder.AddToDB();
+                    // Stock Crossbow Recipes
+                    ItemDefinition craftintgManual = ItemBuilder.BuilderCopyFromItemSetRecipe(newRecipe, DatabaseHelper.ItemDefinitions.CraftingManual_Enchant_Longbow_Of_Accuracy,
+                    "CraftingManual_" + newRecipe.Name, DatabaseHelper.ItemDefinitions.CraftingManualRemedy.GuiPresentation, 200);
+                    StockItem(DatabaseHelper.MerchantDefinitions.Store_Merchant_Circe, craftintgManual);
+                    StockItem(DatabaseHelper.MerchantDefinitions.Store_Merchant_Gorim_Ironsoot_Cyflen_GeneralStore, craftintgManual);
+                }
+
+            }
+        }
+
+        private static void StockItem(MerchantDefinition merchant, ItemDefinition item)
+        {
+            StockUnitDescription stockUnit = new StockUnitDescription();
+            stockUnit.SetItemDefinition(item);
+            stockUnit.SetInitialAmount(1);
+            stockUnit.SetInitialized(true);
+            stockUnit.SetMaxAmount(2);
+            stockUnit.SetMinAmount(1);
+            stockUnit.SetStackCount(1);
+            stockUnit.SetReassortAmount(1);
+            merchant.StockUnitDescriptions.Add(stockUnit);
         }
     }
 }

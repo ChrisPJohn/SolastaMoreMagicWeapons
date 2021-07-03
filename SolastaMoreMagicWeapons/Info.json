@@ -1,7 +1,7 @@
 {
 	"Id": "SolastaMoreMagicWeapons",
 	"DisplayName": "SolastaMoreMagicWeapons",
-	"Author": "ChrisPJohn",
+	"Author": "ChrisJohnDigital",
 	"Version": "0.0.1",
 	"ManagerVersion": "0.23.4",
 	"Requirements": [ "SolastaModApi" ],
@@ -9,5 +9,5 @@
 	"AssemblyName": "SolastaMoreMagicWeapons.dll",
 	"EntryMethod": "SolastaMoreMagicWeapons.Main.Load",
 	"Repository": "https://raw.githubusercontent.com/ChrisPJohn/SolastaMoreMagicWeapons/main/SolastaMoreMagicWeapons/Repository.json",
-	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/##"
+	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/128"
 }
