@@ -78,7 +78,11 @@ namespace SolastaMoreMagicWeapons
         {
             List<ItemDefinition> ThrowingWeapons = new List<ItemDefinition>() {
                 DatabaseHelper.ItemDefinitions.Handaxe,
+            };
+
+            List<ItemDefinition> ThrowingOnlyWeapons = new List<ItemDefinition>() {
                 DatabaseHelper.ItemDefinitions.Javelin,
+                DatabaseHelper.ItemDefinitions.Dart,
             };
 
             List<MagicItemDataHolder> ThrowingToCopy = new List<MagicItemDataHolder>()
@@ -101,12 +105,15 @@ namespace SolastaMoreMagicWeapons
             };
 
             AddRecipesForWeapons(ThrowingWeapons, ThrowingToCopy, PrimedInputs);
+            AddRecipesForWeapons(ThrowingOnlyWeapons, ThrowingToCopy, PrimedInputs, 3);
 
             List<ItemDefinition> BashingWeapons = new List<ItemDefinition>()
             {
                 DatabaseHelper.ItemDefinitions.Club,
                 DatabaseHelper.ItemDefinitions.Maul,
             };
+
+            StockItem(DatabaseHelper.MerchantDefinitions.Store_Merchant_Gorim_Ironsoot_Cyflen_GeneralStore, DatabaseHelper.ItemDefinitions.Maul);
             
             List<MagicItemDataHolder> BashingToCopy = new List<MagicItemDataHolder>()
             {
@@ -173,14 +180,19 @@ namespace SolastaMoreMagicWeapons
 
         private static void AddRecipesForWeapons(List<ItemDefinition> BaseWeapons, List<MagicItemDataHolder> MagicToCopy, List<ItemDefinition> PossiblePrimedItemsToReplace)
         {
+            AddRecipesForWeapons(BaseWeapons, MagicToCopy, PossiblePrimedItemsToReplace, 1);
+        }
+
+        private static void AddRecipesForWeapons(List<ItemDefinition> BaseWeapons, List<MagicItemDataHolder> MagicToCopy, List<ItemDefinition> PossiblePrimedItemsToReplace, int producedByRecipe)
+        {
             foreach (ItemDefinition baseItem in BaseWeapons)
             {
                 foreach (MagicItemDataHolder itemData in MagicToCopy)
                 {
-                    // Generate Crossbow items
-                    ItemDefinition newCrossbow = ItemBuilder.BuildNewMagicWeapon(baseItem, itemData.Item, itemData.Name);
-                    // Generate recipes for crossbows
-                    string recipeName = "RecipeEnchanting" + newCrossbow.Name;
+                    // Generate new items
+                    ItemDefinition newItem = ItemBuilder.BuildNewMagicWeapon(baseItem, itemData.Item, itemData.Name);
+                    // Generate recipes for items
+                    string recipeName = "RecipeEnchanting" + newItem.Name;
                     RecipeBuilder builder = new RecipeBuilder(recipeName, GuidHelper.Create(Main.ModGuidNamespace, recipeName).ToString());
                     builder.AddIngredient(baseItem);
                     foreach (IngredientOccurenceDescription ingredient in itemData.Recipe.Ingredients)
@@ -191,10 +203,10 @@ namespace SolastaMoreMagicWeapons
                         }
                         builder.AddIngredient(ingredient);
                     }
-                    builder.SetCraftedItem(newCrossbow);
+                    builder.SetCraftedItem(newItem, producedByRecipe);
                     builder.SetCraftingCheckData(itemData.Recipe.CraftingHours, itemData.Recipe.CraftingDC, itemData.Recipe.ToolType);
                     RecipeDefinition newRecipe = builder.AddToDB();
-                    // Stock Crossbow Recipes
+                    // Stock item Recipes
                     ItemDefinition craftintgManual = ItemBuilder.BuilderCopyFromItemSetRecipe(newRecipe, DatabaseHelper.ItemDefinitions.CraftingManual_Enchant_Longbow_Of_Accuracy,
                     "CraftingManual_" + newRecipe.Name, DatabaseHelper.ItemDefinitions.CraftingManualRemedy.GuiPresentation, 200);
                     StockItem(DatabaseHelper.MerchantDefinitions.Store_Merchant_Circe, craftintgManual);

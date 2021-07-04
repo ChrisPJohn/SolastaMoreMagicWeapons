@@ -14,6 +14,14 @@ Equipment/&Enchanted_Javelin_Souldrinker_Title Souldrinker Javelin
 Equipment/&Enchanted_Javelin_Souldrinker_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. A favorite of Silent Whisper agents, this weapon was designed by Cylordir Redblade.
 Equipment/&Enchanted_Javelin_Frostburn_Title Frostburn Javelin
 Equipment/&Enchanted_Javelin_Frostburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Keliandir Moltenheart, who forged this weapon to fight salamanders after an exploration of the elemental planes went awry.
+Equipment/&Enchanted_Dart_Acuteness_Title Dart of Acuteness
+Equipment/&Enchanted_Dart_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Dart_Sharpness_Title Dart of Sharpness
+Equipment/&Enchanted_Dart_Sharpness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Dart_Souldrinker_Title Souldrinker Dart
+Equipment/&Enchanted_Dart_Souldrinker_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. A favorite of Silent Whisper agents, this weapon was designed by Cylordir Redblade.
+Equipment/&Enchanted_Dart_Frostburn_Title Frostburn Dart
+Equipment/&Enchanted_Dart_Frostburn_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. It was designed by Keliandir Moltenheart, who forged this weapon to fight salamanders after an exploration of the elemental planes went awry.
 Equipment/&Enchanted_Club_Acuteness_Title Club of Acuteness
 Equipment/&Enchanted_Club_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
 Equipment/&Enchanted_Club_Bearclaw_Title Bearclaw Club
