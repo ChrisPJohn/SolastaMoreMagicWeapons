@@ -66,6 +66,12 @@ namespace SolastaMoreMagicWeapons
                 Definition.WeaponDescription.EffectDescription.EffectForms.Add(effect);
             }
 
+            public void SetUsableDeviceDescription(UsableDeviceDescription usableDescription)
+            {
+                Definition.IsUsableDevice = true;
+                Definition.SetUsableDeviceDescription(usableDescription);
+            }
+
         }
 
         public static ItemDefinition BuilderCopyFromItemSetRecipe(RecipeDefinition recipeDefinition, ItemDefinition toCopy, string name, GuiPresentation guiPresentation, int gold)
@@ -87,6 +93,10 @@ namespace SolastaMoreMagicWeapons
             builder.MakeMagical();
             // Copy over static properties from example enchanted
             builder.SetStaticProperties(magicalExample.StaticProperties);
+            if (magicalExample.IsUsableDevice)
+            {
+                builder.SetUsableDeviceDescription(magicalExample.UsableDeviceDescription);
+            }
             // If example enchated has multiple forms, copy over extra forms
             if (magicalExample.WeaponDescription.EffectDescription.EffectForms.Count > 1)
             {

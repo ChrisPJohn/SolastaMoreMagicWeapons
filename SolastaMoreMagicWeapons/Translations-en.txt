@@ -42,6 +42,16 @@ Equipment/&Enchanted_Maul_Lightbringer_Title Lightbringer Maul
 Equipment/&Enchanted_Maul_Lightbringer_Description This enchanted weapon was forged using the ancient knowledge of Colthannin's master smiths. It was designed by Elgador Keenspirit, Magesmith of the Arcaneum to support combat against undead creatures.
 Equipment/&Enchanted_Maul_Punisher_Title Punisher Maul
 Equipment/&Enchanted_Maul_Punisher_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. The combination of the best metal and Slavestone gave this axe incredible piercing power.
+Equipment/&Enchanted_Warhammer_Acuteness_Title Warhammer of Acuteness
+Equipment/&Enchanted_Warhammer_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
+Equipment/&Enchanted_Warhammer_Bearclaw_Title Bearclaw Warhammer
+Equipment/&Enchanted_Warhammer_Bearclaw_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. The sharp spikes of the bear's claw shred armor to inflict additional damage – just as expected by Ildurial Stronghand, who designed the first weapon of this kind.
+Equipment/&Enchanted_Warhammer_Power_Title Warhammer of Power
+Equipment/&Enchanted_Warhammer_Power_Description This enchanted weapon was forged using the ancient knowledge of Manacalon's master smiths. Some creatures only respect physical strengths. Manacalon arcanists created this Warhammer to give champions of the Iron Legions the strength their elven bodies didn’t provide.
+Equipment/&Enchanted_Warhammer_Lightbringer_Title Lightbringer Warhammer
+Equipment/&Enchanted_Warhammer_Lightbringer_Description This enchanted weapon was forged using the ancient knowledge of Colthannin's master smiths. It was designed by Elgador Keenspirit, Magesmith of the Arcaneum to support combat against undead creatures.
+Equipment/&Enchanted_Warhammer_Punisher_Title Punisher Warhammer
+Equipment/&Enchanted_Warhammer_Punisher_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. The combination of the best metal and Slavestone gave this axe incredible piercing power.
 Equipment/&Enchanted_Quarterstaff_Acuteness_Title Quarterstaff of Acuteness
 Equipment/&Enchanted_Quarterstaff_Acuteness_Description This enchanted weapon was created using the ancient knowledge of Manacalon's master smiths. Its design was one of the early works of Elgador Keenspirit, Magesmith of the Arcaneum.
 Equipment/&Enchanted_Quarterstaff_Frostburn_Title Frostburn Quarterstaff

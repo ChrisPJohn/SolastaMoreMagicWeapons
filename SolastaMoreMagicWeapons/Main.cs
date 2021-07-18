@@ -111,6 +111,7 @@ namespace SolastaMoreMagicWeapons
             {
                 DatabaseHelper.ItemDefinitions.Club,
                 DatabaseHelper.ItemDefinitions.Maul,
+                DatabaseHelper.ItemDefinitions.Warhammer,
             };
 
             StockItem(DatabaseHelper.MerchantDefinitions.Store_Merchant_Gorim_Ironsoot_Cyflen_GeneralStore, DatabaseHelper.ItemDefinitions.Maul);

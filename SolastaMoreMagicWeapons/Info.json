@@ -2,7 +2,7 @@
 	"Id": "SolastaMoreMagicWeapons",
 	"DisplayName": "SolastaMoreMagicWeapons",
 	"Author": "ChrisJohnDigital",
-	"Version": "0.0.2",
+	"Version": "0.0.5",
 	"ManagerVersion": "0.23.4",
 	"Requirements": [ "SolastaModApi" ],
 	"LoadAfter": [ "SolastaModApi" ],
